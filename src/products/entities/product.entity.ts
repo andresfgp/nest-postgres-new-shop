@@ -44,6 +44,12 @@ export class Product {
   })
   stock: number;
 
+  @Column('text', {
+    array: true,
+    default: [],
+  })
+  tags: string[];
+
   // Before Insert
   @BeforeInsert()
   checkSlugInsert() {
