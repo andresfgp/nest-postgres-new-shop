@@ -42,4 +42,14 @@ export class User {
   fullNameInsert() {
     this.fullName = ` ${this.firstName} ${this.lastName}`;
   }
+
+  @BeforeInsert()
+  checkFieldBeforeInsert() {
+    this.email = this.email.toLocaleLowerCase().trim();
+  }
+
+  @BeforeInsert()
+  checkFieldBeforeUpdate() {
+    this.checkFieldBeforeInsert();
+  }
 }
