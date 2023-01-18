@@ -1,7 +1,9 @@
 import { Controller, Post, Body, Get, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { AuthService } from './auth.service';
+import { GetUser } from './decorators/get-user.decorator';
 import { CreateUserDto, LoginUserDto } from './dto';
+import { User } from './entities/user.entity';
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
@@ -18,7 +20,7 @@ export class AuthController {
 
   @Get('private')
   @UseGuards(AuthGuard())
-  findAll() {
-    return 'private';
+  privateTest(@GetUser() user: User) {
+    return user;
   }
 }
