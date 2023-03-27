@@ -9,9 +9,11 @@ import {
 import { AuthGuard } from '@nestjs/passport';
 import { AuthService } from './auth.service';
 import { GetUser } from './decorators/get-user.decorator';
+import { RoleProtected } from './decorators/role-protected.decorator';
 import { CreateUserDto, LoginUserDto } from './dto';
 import { User } from './entities/user.entity';
 import { UserRoleGuard } from './guards/user-role.guard';
+import { ValidRoles } from './interfaces/valid-roles';
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
@@ -26,8 +28,9 @@ export class AuthController {
     return this.authService.loginUser(loginUserDto);
   }
 
+  // @SetMetadata('roles', ['admin', 'super-user'])
   @Get('private')
-  @SetMetadata('roles', ['admin', 'super-user'])
+  @RoleProtected(ValidRoles.admin)
   @UseGuards(AuthGuard(), UserRoleGuard)
   privateTest(@GetUser() user: User) {
     return user;
