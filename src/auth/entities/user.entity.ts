@@ -1,6 +1,13 @@
 // relacion entre tablas bases de datos y nuestra app de nest
 
-import { BeforeInsert, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Product } from 'src/products/entities';
+import {
+  BeforeInsert,
+  Column,
+  Entity,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity('users')
 export class User {
@@ -36,6 +43,9 @@ export class User {
     default: true,
   })
   isActive: boolean;
+
+  @OneToMany(() => Product, (product) => product.user)
+  product: Product;
 
   // Before Insert
   @BeforeInsert()
