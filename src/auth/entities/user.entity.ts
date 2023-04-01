@@ -3,6 +3,7 @@
 import { Product } from 'src/products/entities';
 import {
   BeforeInsert,
+  BeforeUpdate,
   Column,
   Entity,
   OneToMany,
@@ -58,7 +59,7 @@ export class User {
     this.email = this.email.toLocaleLowerCase().trim();
   }
 
-  @BeforeInsert()
+  @BeforeUpdate()
   checkFieldBeforeUpdate() {
     this.checkFieldBeforeInsert();
   }
