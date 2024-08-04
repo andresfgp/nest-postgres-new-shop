@@ -1,0 +1,118 @@
+/* Header Styles */
+.header {
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the title horizontally */
+  height: var(--header-height);
+  padding: 0 1em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative; /* Position relative for positioning the logo */
+}
+
+.header img {
+  height: 40px;
+  position: absolute; /* Position absolute for logo placement */
+  right: 1em; /* Adjust as needed for spacing from the right edge */
+}
+
+.header h1 {
+  margin: 0;
+  font-size: var(--font-size-heading);
+  line-height: 1.2;
+  text-align: center;
+  flex: 1; /* Make the heading take up available space */
+}
+
+/* Main Content Styles */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+}
+
+/* File Input */
+input[type="file"] {
+  margin: 1em 0;
+}
+
+/* Button Styles */
+.generate-button {
+  border: 2px solid #1252a1;
+  background-color: #1252a1;
+  color: #fff;
+  margin-left: 0.5rem;
+}
+
+.generate-button:hover {
+  background-color: #5bc6ee !important;
+  border-color: #5bc6ee !important;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+/* Settings Form */
+.settings {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Stretch the form to fill the container */
+  margin: 1em auto; /* Center the form horizontally */
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--settings-bg-color);
+  border: 1px solid var(--settings-border-color);
+  border-radius: 8px;
+  padding: 1em; /* Added padding for better spacing */
+  position: relative; /* For positioning the header */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+}
+
+/* Label and Input Styling */
+.settings label {
+  margin-bottom: 1.5em; /* Increased spacing between fields */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.settings input[type="number"],
+.settings input[type="file"] {
+  padding: 0.75em; /* Increased padding for better touch targets */
+  margin-top: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.settings input[type="file"] {
+  font-size: 0.875rem; /* Adjusted file input font size */
+  margin-bottom: 0;
+  cursor: pointer; /* Change cursor to pointer for file input */
+}
+
+/* Footer Styles  */
+.footer {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.version {
+  text-align: right;
+  margin-right: 1rem;
+}
+
+/* Error message styling */
+.error {
+  color: red;
+  font-size: 0.875em;
+  margin-top: 0.5em; /* Adjusted margin for spacing */
+}

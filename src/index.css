@@ -1,0 +1,71 @@
+/* Root Variables */
+:root {
+  --font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --line-height: 1.6;
+  --font-weight: 400;
+  --text-color-dark: #e0e0e0;
+  --text-color-light: #121212;
+  --background-color-light: #f4f4f4;
+  --link-color: gray;
+  --link-hover-color: gray;
+  --button-bg-light: #fff;
+  --button-border-color: rgba(0,0,0,0.1);
+  --button-hover-bg: rgba(0,0,0,0.1);
+  --button-hover-border-color: rgba(0,0,0,0.1);
+  --button-padding: 0.8em 1.5em;
+  --button-radius: 4px;
+  --font-size-base: 1rem;
+  --font-size-large: 2.5rem;
+  --font-size-heading: 2.5rem;
+  --header-height: 60px;
+  --settings-bg-color: #f9f9f9;
+  --settings-border-color: #ddd;
+  --primary-color: gray;
+  --primary-color-dark: gray;
+  --text-color-dark: #333;
+  --header-bg-color: #f9f9f9;
+  --header-text-color: #333;
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  line-height: var(--line-height);
+  font-weight: var(--font-weight);
+  color: var(--text-color-dark);
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color-dark);
+}
+
+/* Button Styles */
+button {
+  border-radius: var(--button-radius);
+  padding: var(--button-padding);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  color: var(--text-color-dark);
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--button-border-color);
+  background-color: var(--button-bg-dark);
+  color: var(--text-color-dark);
+}
+
+button:hover {
+  background-color: var(--button-hover-bg);
+  border-color: var(--button-hover-border-color);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:focus,
+button:focus-visible {
+  outline-offset: 2px;
+}
